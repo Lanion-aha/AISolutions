@@ -1,0 +1,7 @@
+Flask==2.3.3
+pandas==2.2.2
+matplotlib==3.8.4
+fpdf==1.7.2
+google-api-python-client==2.126.0
+google-auth==2.29.0
+gunicorn==22.0.0
