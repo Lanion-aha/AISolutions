@@ -16,8 +16,12 @@ INFLUENCER_SPREADSHEET_ID = '18Pw59giiDPGEF4Z32PxhXljhGsGrhenz4lRoqQBHxxM'
 DASHBOARD_FOLDER_ID = '1mc1YjttlTCaG4XwpIuVSnImdWBEh1-YL'
 
 # === GOOGLE API ===
-credentials = service_account.Credentials.from_service_account_file(
-    SERVICE_ACCOUNT_FILE, scopes=SCOPES)
+import json
+
+creds_info = json.loads(os.environ["GOOGLE_CREDENTIALS"])
+credentials = service_account.Credentials.from_service_account_info(
+    creds_info, scopes=SCOPES)
+
 sheets_service = build('sheets', 'v4', credentials=credentials)
 drive_service = build('drive', 'v3', credentials=credentials)
 
