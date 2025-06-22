@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: kol-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn kol_api:app
+    autoDeploy: true
